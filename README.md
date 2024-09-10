@@ -1,5 +1,3 @@
-Here's a cleaned-up and formatted version of your README:
-
 # CICD with AWS
 
 ### Steps
@@ -72,5 +70,3 @@ Here's a cleaned-up and formatted version of your README:
 
 8. **Add GitHub Secrets for AWS**
    - Add AWS credentials (access key and secret key) as GitHub secrets for your workflow to access AWS services.
-
-This guide should now be easier to follow and execute! Let me know if you need further adjustments.

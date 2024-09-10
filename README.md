@@ -1,34 +1,76 @@
+Here's a cleaned-up and formatted version of your README:
+
 # CICD with AWS
 
-Steps
-- clone git repo https://github.com/AbdullahMansoor123/ml_end2end
-- cd in ml_end2end
-- make a dockerfile
-- create github workflow
-- create iam user and download access key
-- create aws ecr repo and copy URL
-- 533267203292.dkr.ecr.us-east-1.amazonaws.com/student_performance
-- create ec2 instance
-  - update ec2 instance
-    - sudo apt-get update -y
-    - sudo apt-get update 
-    - curl -fsSL https://get.docker.com -o get-docker.sh
-    - sudo sh get-docker.sh
-    - sudo usermod -aG docker ubuntu
-    - newgrp docker
-- Creat Runner on github to connect repo with ec2 so every change will be exceuted
-  - # Create a folder
-  $ mkdir actions-runner && cd actions-runnerCopied! # Download the latest runner package
-  $ curl -o actions-runner-linux-x64-2.319.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-linux-x64-2.319.1.tar.gzCopied!# Optional: Validate the hash
-  $ echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464  actions-runner-linux-x64-2.319.1.tar.gz" | shasum -a 256 -cCopied! # Extract the installer
-  $ tar xzf ./actions-runner-linux-x64-2.319.1.tar.gzCopied!
-  Configure
-  # Create the runner and start the configuration experience
-  $ ./config.sh --url https://github.com/AbdullahMansoor123/cicd_with_aws --token APVVSE5GDZHV4LXDHMV5S5TG4BAIECopied!# Last step, run it!
-  $ ./run.sh
-  Using your self-hosted runner
-  # Use this YAML in your workflow file for each job
-  runs-on: self-hosted
+### Steps
 
-- add secret key in github for using aws through github
-- 
+1. **Clone the GitHub Repo**  
+   ```bash
+   git clone https://github.com/AbdullahMansoor123/ml_end2end
+   cd ml_end2end
+   ```
+
+2. **Create a Dockerfile**  
+   - Define the Dockerfile to build the application.
+
+3. **Create a GitHub Workflow**  
+   - Set up GitHub Actions workflow for continuous integration.
+
+4. **Create IAM User and Download Access Key**  
+   - Create an IAM user in AWS with necessary permissions and download the access key and secret key.
+
+5. **Create AWS ECR Repo and Copy URL**  
+   - Create a repository in AWS Elastic Container Registry (ECR) and copy the repository URL.
+
+6. **Set Up EC2 Instance**  
+   - Launch an EC2 instance and configure it as follows:
+     ```bash
+     sudo apt-get update -y
+     sudo apt-get update
+     curl -fsSL https://get.docker.com -o get-docker.sh
+     sudo sh get-docker.sh
+     sudo usermod -aG docker ubuntu
+     newgrp docker
+     ```
+
+7. **Create Runner on GitHub to Connect Repo with EC2**
+   - **Create a Folder for the Runner**  
+     ```bash
+     mkdir actions-runner && cd actions-runner
+     ```
+
+   - **Download the Latest Runner Package**  
+     ```bash
+     curl -o actions-runner-linux-x64-2.319.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.319.1/actions-runner-linux-x64-2.319.1.tar.gz
+     ```
+
+   - **Optional: Validate the Hash**  
+     ```bash
+     echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464  actions-runner-linux-x64-2.319.1.tar.gz" | shasum -a 256 -c
+     ```
+
+   - **Extract the Installer**  
+     ```bash
+     tar xzf ./actions-runner-linux-x64-2.319.1.tar.gz
+     ```
+
+   - **Configure the Runner**  
+     ```bash
+     ./config.sh --url https://github.com/AbdullahMansoor123/cicd_with_aws --token <your_github_token>
+     ```
+
+   - **Run the Runner**  
+     ```bash
+     ./run.sh
+     ```
+
+   - **Update GitHub Workflow YAML**  
+     Use the following in your GitHub Actions workflow file:
+     ```yaml
+     runs-on: self-hosted
+     ```
+
+8. **Add GitHub Secrets for AWS**
+   - Add AWS credentials (access key and secret key) as GitHub secrets for your workflow to access AWS services.
+
+This guide should now be easier to follow and execute! Let me know if you need further adjustments.

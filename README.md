@@ -70,3 +70,8 @@
 
 8. **Add GitHub Secrets for AWS**
    - Add AWS credentials (access key and secret key) as GitHub secrets for your workflow to access AWS services.
+
+9. **Edit Inbound Rules for EC2 Instance**  
+   - Go to the **Security** settings of your EC2 instance.
+   - Navigate to **Security Groups**.
+   - Edit the **Inbound Rules** by adding a **Custom TCP** rule with the port number `4242` as specified in the GitHub workflow file.

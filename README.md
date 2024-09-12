@@ -30,6 +30,7 @@
      sudo usermod -aG docker ubuntu
      newgrp docker
      ```
+     check if the setup completed successfully by running `docker images` on the EC2 instance
 
 7. **Create Runner on GitHub to Connect Repo with EC2**
    - **Create a Folder for the Runner**  
@@ -54,7 +55,7 @@
 
    - **Configure the Runner**  
      ```bash
-     ./config.sh --url https://github.com/AbdullahMansoor123/cicd_with_aws --token <your_github_token>
+     ./config.sh --url https://github.com/AbdullahMansoor123/ml_end2end --token <your_github_token>
      ```
 
    - **Run the Runner**  
@@ -74,4 +75,6 @@
 9. **Edit Inbound Rules for EC2 Instance**  
    - Go to the **Security** settings of your EC2 instance.
    - Navigate to **Security Groups**.
-   - Edit the **Inbound Rules** by adding a **Custom TCP** rule with the port number `4242` as specified in the GitHub workflow file.
+   - Edit the **Inbound Rules** by adding a **Custom TCP** rule with the port number `4242` as specified in the GitHub workflow file
+10.  **Initiate CICD github workflow**
+   - Commit and push any change in the git repo to intiate cicd workflow.  

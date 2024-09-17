@@ -1,4 +1,6 @@
-# CICD with AWS
+# End-to-End Model Deployment with CI/CD Pipelines
+## Goal: Automate the deployment of a machine learning model using CI/CD pipelines.
+## Tools: GitHub Actions, AWS (EC2, ECR, S3), Docker
 
 ### Steps
 
